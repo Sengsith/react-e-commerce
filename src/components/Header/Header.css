@@ -1,0 +1,8 @@
+#hamburger {
+  border: transparent;
+  background-color: transparent;
+}
+
+#hamburger:hover {
+  cursor: pointer;
+}
