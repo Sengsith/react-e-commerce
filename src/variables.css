@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  /* Primary Colors */
+  --clr-primary-orange: hsl(26, 100%, 55%);
+  --clr-primary-pale-orange: hsl(25, 100%, 94%);
+
+
+  /* Neutral Colors */
+  --clr-neutral-darkblue: hsl(220, 13%, 13%);
+  --clr-neutral-darkgrayblue: hsl(219, 9%, 45%);
+  --clr-neutral-grayblue: hsl(220, 14%, 75%);
+  --clr-neutral-light-grayblue: hsl(223, 64%, 98%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+  --clr-neutral-black: hsl(0, 0%, 0%);
+  --clr-neutral-black-75o: hsl(0, 0%, 0%, 75%);
+
+  --ff-primary: 'Kumbh Sans', sans-serif;
+  /* Font Weight: 400, 700*/
+}
