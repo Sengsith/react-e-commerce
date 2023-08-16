@@ -1,8 +1,32 @@
-#hamburger {
+.primary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid limegreen !important; */
+  padding-block: 1em;
+}
+
+.header-left,
+.header-right {
+  display: inherit;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 1em;
+  /* border: 1px solid red !important; */
+}
+
+#hamburger-btn {
+  display: flex;
   border: transparent;
   background-color: transparent;
 }
 
-#hamburger:hover {
+#hamburger-btn:hover {
   cursor: pointer;
+}
+
+#icon-cart,
+#avatar {
+  width: 20%;
+  
 }
