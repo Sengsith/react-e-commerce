@@ -1,9 +1,11 @@
+@import "../../variables.css";
+
 .primary-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   /* border: 1px solid limegreen !important; */
-  padding-block: 1em;
+  padding: var(--padding-inline);
 }
 
 .header-left,
