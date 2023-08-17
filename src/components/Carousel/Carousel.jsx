@@ -28,6 +28,14 @@ const Carousel = () => {
 
   return (
     <div className="carousel">
+      <div className="arrow-buttons">
+        <button className="arrow" id="left-arrow">
+          <img src="../../src/assets/images/icon-previous.svg" />
+        </button>
+        <button className="arrow" id="right-arrow">
+          <img src="../../src/assets/images/icon-next.svg" />
+        </button>
+      </div>
       <div className="carousel-images">
         {gallery.map((image) => {
           return <img key={image.id} src={image.thumbnail}></img>;

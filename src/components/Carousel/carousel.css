@@ -1,3 +1,35 @@
+@import "../../variables.css";
+
+.carousel {
+  position: relative;
+  height: max-content;
+}
+
+.arrow-buttons {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  height: 3em;
+  width: 3em;
+  background-color: var(--clr-neutral-white);
+}
+#left-arrow {
+  left: 5%;
+}
+#right-arrow {
+  right: 5%;
+}
+
 .carousel-images {
   display: flex;
   flex-direction: row;

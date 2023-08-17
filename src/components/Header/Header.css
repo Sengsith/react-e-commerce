@@ -17,16 +17,6 @@
   /* border: 1px solid red !important; */
 }
 
-#hamburger-btn {
-  display: flex;
-  border: transparent;
-  background-color: transparent;
-}
-
-#hamburger-btn:hover {
-  cursor: pointer;
-}
-
 #icon-cart,
 #avatar {
   width: 20%;
