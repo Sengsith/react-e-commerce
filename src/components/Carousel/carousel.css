@@ -1,21 +1,37 @@
 @import "../../variables.css";
 
-.carousel {
+.carousel-container {
   position: relative;
-  height: max-content;
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-.arrow-buttons {
-  position: absolute;
-  z-index: 5;
-  inset: 0;
+.carousel-wrapper {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-.arrow {
+.carousel-element {
+  flex: 1 0 100%;
+}
+
+.carousel-element > img {
+  /* Remove white space under image from inline */
+  display: block;
+
+  width: 100%;
+  height: 21rem;
+  object-fit: cover;
+}
+
+.carousel-arrow {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
+  z-index: 5;
   top: 50%;
   transform: translateY(-50%);
   border-radius: 50%;
@@ -23,15 +39,12 @@
   width: 3em;
   background-color: var(--clr-neutral-white);
 }
-#left-arrow {
+#previous-arrow {
   left: 5%;
 }
-#right-arrow {
+#next-arrow {
   right: 5%;
 }
-
-.carousel-images {
-  display: flex;
-  flex-direction: row;
-  overflow-x: hidden;
+.carousel-arrow > img {
+  pointer-events: none;
 }
