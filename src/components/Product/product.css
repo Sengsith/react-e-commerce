@@ -1,0 +1,47 @@
+@import "../../variables.css";
+
+.product-container {
+  text-align: start;
+  padding-inline: var(--padding-inline);
+  margin-block: 1em;
+}
+
+.product-brand-link {
+  display: block;
+  color: var(--clr-primary-orange);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .10em;
+  margin-bottom: 1rem;
+}
+
+.product-title {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.product-description {
+  color: var(--clr-neutral-darkgrayblue);
+  margin-bottom: 1rem;
+}
+
+.product-pricing {
+  display: flex;
+  align-items: center;
+}
+.product-pricing__price {
+  font-size: 2rem;
+}
+.product-pricing__discount {
+  margin-left: 1em;
+  padding: .15em .35em;
+  border-radius: .5em;
+  color: var(--clr-primary-orange);
+  background-color: var(--clr-primary-orange-o);
+}
+.product-pricing__original {
+  margin-left: auto;
+  color: var(--clr-neutral-darkgrayblue);
+  text-decoration: line-through;
+}

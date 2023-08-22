@@ -1,11 +1,12 @@
 import React from "react";
 
+import "./product.css";
+
 const Product = () => {
   return (
     <main>
-      <div className="product-gallery"></div>
       <div className="product-container">
-        <a href="#" className="product-brand">
+        <a href="#" className="product-brand-link">
           Sneaker Company
         </a>
         <div className="product-title">Fall Limited Edition Sneakers</div>
