@@ -1,0 +1,33 @@
+.quantity-container {
+  position: relative;
+}
+
+.quantity-container > input {
+  width: 100%;
+  appearance: textfield;
+  text-align: center;
+  font-weight: 700;
+  padding-block: 1.5em;
+  border-radius: .5em;
+  border: none;
+  outline: none;
+  color: var(--clr-neutral-black);
+  background-color: var(--clr-neutral-light-grayblue);
+}
+
+.quantity-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding-inline: 1rem;
+}
+#subtract-button {
+  left: 0;
+}
+#add-button {
+  right: 0;
+}

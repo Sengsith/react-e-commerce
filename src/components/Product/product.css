@@ -22,6 +22,7 @@
 }
 
 .product-description {
+  font-weight: 400;
   color: var(--clr-neutral-darkgrayblue);
   margin-bottom: 1rem;
 }
@@ -29,6 +30,7 @@
 .product-pricing {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .product-pricing__price {
   font-size: 2rem;
