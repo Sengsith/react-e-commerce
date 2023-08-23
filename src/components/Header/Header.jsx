@@ -2,11 +2,13 @@ import React, { useState } from "react";
 
 import "./header.css";
 
+import CustomCart from "../CustomIcons/CustomCart.jsx";
+
 const Header = () => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 
   const toggleMenu = () => {
-    // Invert isMenuExpanded
+    // Toggle isMenuExpanded
     setIsMenuExpanded((prevIsMenuExpanded) => !prevIsMenuExpanded);
   };
 
@@ -41,11 +43,7 @@ const Header = () => {
         <img src="./src/assets/images/logo.svg" alt="sneakers-logo"></img>
       </div>
       <div className="header-right">
-        <img
-          id="icon-cart"
-          src="./src/assets/images/icon-cart.svg"
-          alt="cart"
-        ></img>
+        <CustomCart fill="#69707D" />
         <img
           id="avatar"
           src="./src/assets/images/image-avatar.png"
@@ -57,5 +55,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// TODO: Lookup later: https://www.w3.org/WAI/ARIA/apg/

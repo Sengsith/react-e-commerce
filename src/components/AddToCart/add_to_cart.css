@@ -1,0 +1,16 @@
+@import "../../variables.css";
+
+.add-to-cart-button {
+  font-weight: 700;
+  font-size: 1rem;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  border-radius: .75rem;
+  background-color: var(--clr-primary-orange);
+}
+.add-to-cart-button > img {
+  fill: white;
+}
