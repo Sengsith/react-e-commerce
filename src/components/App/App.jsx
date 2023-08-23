@@ -1,6 +1,6 @@
 import React from "react";
 
-import "src/components/App/app.css";
+import "./app.css";
 
 import Header from "../Header/Header.jsx";
 import Carousel from "../Carousel/Carousel.jsx";
