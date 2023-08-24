@@ -6,23 +6,23 @@ const Carousel = () => {
   const gallery = [
     {
       id: 1,
-      thumbnail: "../../src/assets/images/image-product-1.jpg",
-      image: "../../src/assets/images/image-product-1.jpg",
+      thumbnail: "/src/assets/images/image-product-1.jpg",
+      image: "/src/assets/images/image-product-1.jpg",
     },
     {
       id: 2,
-      thumbnail: "../../src/assets/images/image-product-2.jpg",
-      image: "../../src/assets/images/image-product-2.jpg",
+      thumbnail: "/src/assets/images/image-product-2.jpg",
+      image: "/src/assets/images/image-product-2.jpg",
     },
     {
       id: 3,
-      thumbnail: "../../src/assets/images/image-product-3.jpg",
-      image: "../../src/assets/images/image-product-3.jpg",
+      thumbnail: "/src/assets/images/image-product-3.jpg",
+      image: "/src/assets/images/image-product-3.jpg",
     },
     {
       id: 4,
-      thumbnail: "../../src/assets/images/image-product-4.jpg",
-      image: "../../src/assets/images/image-product-4.jpg",
+      thumbnail: "/src/assets/images/image-product-4.jpg",
+      image: "/src/assets/images/image-product-4.jpg",
     },
   ];
 
@@ -64,7 +64,7 @@ const Carousel = () => {
         aria-label="previous-image"
         onClick={handleClickPrevious}
       >
-        <img src="../../src/assets/images/icon-previous.svg" alt="left-arrow" />
+        <img src="/src/assets/images/icon-previous.svg" alt="left-arrow" />
       </a>
       <a
         href={`#image-${rightId}`}
@@ -73,7 +73,7 @@ const Carousel = () => {
         aria-label="next-image"
         onClick={handleClickNext}
       >
-        <img src="../../src/assets/images/icon-next.svg" alt="right-arrow" />
+        <img src="/src/assets/images/icon-next.svg" alt="right-arrow" />
       </a>
       <div className="carousel-wrapper">
         {gallery.map((image) => {
