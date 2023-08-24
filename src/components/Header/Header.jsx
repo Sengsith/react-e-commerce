@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import "./header.css";
+import "/src/components/Header/header.css";
 
-import CustomCart from "../CustomIcons/CustomCart.jsx";
+import CustomCart from "/src/components/CustomIcons/CustomCart.jsx";
 
 const Header = () => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);

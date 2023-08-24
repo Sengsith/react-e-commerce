@@ -1,10 +1,10 @@
 import React from "react";
 
-import "./app.css";
+import "/src/components/App/app.css";
 
-import Header from "../Header/Header.jsx";
-import Carousel from "../Carousel/Carousel.jsx";
-import Product from "../Product/Product.jsx";
+import Header from "/src/components/Header/Header.jsx";
+import Carousel from "/src/components/Carousel/Carousel.jsx";
+import Product from "/src/components/Product/Product.jsx";
 
 const App = () => {
   return (

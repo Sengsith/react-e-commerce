@@ -1,4 +1,4 @@
-@import "../../variables.css";
+@import "/src/variables.css";
 
 .product-container {
   text-align: start;

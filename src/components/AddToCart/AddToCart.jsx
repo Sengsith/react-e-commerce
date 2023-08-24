@@ -1,8 +1,8 @@
 import React from "react";
 
-import CustomCart from "../CustomIcons/CustomCart.jsx";
+import CustomCart from "/src/components/CustomIcons/CustomCart.jsx";
 
-import "./add_to_cart.css";
+import "/src/components/AddToCart/add_to_cart.css";
 
 const AddToCart = () => {
   return (

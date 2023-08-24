@@ -1,4 +1,4 @@
-@import "./variables.css";
+@import "/src/variables.css";
 
 :root {
   font-family: var(--ff-primary);
