@@ -20,5 +20,35 @@
 #icon-cart,
 #avatar {
   width: 20%;
-  
+}
+
+.menu-bg-active {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  background-color: var(--clr-neutral-black-o);
+}
+
+.header-nav-active {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 35%;
+  padding: var(--padding-inline);
+  background-color: var(--clr-neutral-white);
+}
+
+#nav-menu {
+  margin-top: 3rem;
+}
+
+.nav-menu-item {
+  display: block;
+  margin-bottom: 1rem;
+  text-align: start;
+  color: var(--clr-neutral-black);
+  font-size: 1.15rem;
+  font-weight: 700;
 }

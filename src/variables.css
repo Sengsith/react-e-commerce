@@ -13,7 +13,7 @@
   --clr-neutral-light-grayblue: hsl(223, 64%, 98%);
   --clr-neutral-white: hsl(0, 0%, 100%);
   --clr-neutral-black: hsl(0, 0%, 0%);
-  --clr-neutral-black-75-o: hsl(0, 0%, 0%, 75%);
+  --clr-neutral-black-o: hsl(0, 0%, 0%, 75%);
 
   /* Font */
   --ff-primary: 'Kumbh Sans', sans-serif;
