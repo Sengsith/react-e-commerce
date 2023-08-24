@@ -2,27 +2,39 @@ import React, { useState } from "react";
 
 import "./carousel.css";
 
+import ProductImage1 from "/src/assets/images/image-product-1.jpg";
+import ThumbnailImage1 from "/src/assets/images/image-product-1-thumbnail.jpg";
+import ProductImage2 from "/src/assets/images/image-product-2.jpg";
+import ThumbnailImage2 from "/src/assets/images/image-product-2-thumbnail.jpg";
+import ProductImage3 from "/src/assets/images/image-product-3.jpg";
+import ThumbnailImage3 from "/src/assets/images/image-product-3-thumbnail.jpg";
+import ProductImage4 from "/src/assets/images/image-product-4.jpg";
+import ThumbnailImage4 from "/src/assets/images/image-product-4-thumbnail.jpg";
+
+import IconPrevious from "/src/assets/images/icon-previous.svg";
+import IconNext from "/src/assets/images/icon-next.svg";
+
 const Carousel = () => {
   const gallery = [
     {
       id: 1,
-      thumbnail: "/src/assets/images/image-product-1.jpg",
-      image: "/src/assets/images/image-product-1.jpg",
+      thumbnail: ProductImage1,
+      image: ThumbnailImage1,
     },
     {
       id: 2,
-      thumbnail: "/src/assets/images/image-product-2.jpg",
-      image: "/src/assets/images/image-product-2.jpg",
+      thumbnail: ProductImage2,
+      image: ThumbnailImage2,
     },
     {
       id: 3,
-      thumbnail: "/src/assets/images/image-product-3.jpg",
-      image: "/src/assets/images/image-product-3.jpg",
+      thumbnail: ProductImage3,
+      image: ThumbnailImage3,
     },
     {
       id: 4,
-      thumbnail: "/src/assets/images/image-product-4.jpg",
-      image: "/src/assets/images/image-product-4.jpg",
+      thumbnail: ProductImage4,
+      image: ThumbnailImage4,
     },
   ];
 
@@ -64,7 +76,7 @@ const Carousel = () => {
         aria-label="previous-image"
         onClick={handleClickPrevious}
       >
-        <img src="/src/assets/images/icon-previous.svg" alt="left-arrow" />
+        <img src={IconPrevious} alt="left-arrow" />
       </a>
       <a
         href={`#image-${rightId}`}
@@ -73,7 +85,7 @@ const Carousel = () => {
         aria-label="next-image"
         onClick={handleClickNext}
       >
-        <img src="/src/assets/images/icon-next.svg" alt="right-arrow" />
+        <img src={IconNext} alt="right-arrow" />
       </a>
       <div className="carousel-wrapper">
         {gallery.map((image) => {

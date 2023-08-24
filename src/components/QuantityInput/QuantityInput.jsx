@@ -2,6 +2,9 @@ import React, { useState, useRef } from "react";
 
 import "./quantity_input.css";
 
+import MinusIcon from "/src/assets/images/icon-minus.svg";
+import PlusIcon from "/src/assets/images/icon-plus.svg";
+
 const MAX_QUANTITY = 3;
 
 const QuantityInput = () => {
@@ -58,7 +61,7 @@ const QuantityInput = () => {
         aria-label="subtract"
         onClick={decrementQuantity}
       >
-        <img src="../../src/assets/images/icon-minus.svg" alt="minus" />
+        <img src={MinusIcon} alt="minus" />
       </button>
       <input
         type="number"
@@ -76,7 +79,7 @@ const QuantityInput = () => {
         aria-label="add"
         onClick={incrementQuantity}
       >
-        <img src="../../src/assets/images/icon-plus.svg" alt="plus" />
+        <img src={PlusIcon} alt="plus" />
       </button>
     </div>
   );

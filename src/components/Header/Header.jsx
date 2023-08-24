@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import "./header.css";
 
 import HamburgerIcon from "/src/assets/images/icon-menu.svg";
+import SneakersLogo from "/src/assets/images/logo.svg";
+import Avatar from "/src/assets/images/image-avatar.png";
+
 import CustomCart from "/src/components/CustomIcons/CustomCart.jsx";
 
 const Header = () => {
@@ -41,15 +44,11 @@ const Header = () => {
             </ul>
           )}
         </nav>
-        <img src="src/assets/images/logo.svg" alt="sneakers-logo"></img>
+        <img src={SneakersLogo} alt="sneakers-logo"></img>
       </div>
       <div className="header-right">
         <CustomCart fill="#69707D" />
-        <img
-          id="avatar"
-          src="/src/assets/images/image-avatar.png"
-          alt="avatar-headshot"
-        ></img>
+        <img id="avatar" src={Avatar} alt="avatar-headshot"></img>
       </div>
     </header>
   );
