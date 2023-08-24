@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "./Carousel.css";
+import "./carousel.css";
 
 const Carousel = () => {
   const gallery = [

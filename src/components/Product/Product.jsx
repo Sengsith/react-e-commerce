@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Product.css";
+import "./product.css";
 import QuantityInput from "../QuantityInput/QuantityInput.jsx";
 import AddToCart from "../AddToCart/AddToCart.jsx";
 
