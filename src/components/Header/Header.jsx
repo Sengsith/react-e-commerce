@@ -41,7 +41,7 @@ const Header = () => {
             </ul>
           )}
         </nav>
-        <img src="/src/assets/images/logo.svg" alt="sneakers-logo"></img>
+        <img src="src/assets/images/logo.svg" alt="sneakers-logo"></img>
       </div>
       <div className="header-right">
         <CustomCart fill="#69707D" />
