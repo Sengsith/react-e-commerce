@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "./header.css";
 
+import HamburgerIcon from "/src/assets/images/icon-menu.svg";
 import CustomCart from "/src/components/CustomIcons/CustomCart.jsx";
 
 const Header = () => {
@@ -26,7 +27,7 @@ const Header = () => {
           >
             <img
               id="icon-hamburger"
-              src="src/assets/images/icon-menu.svg"
+              src={HamburgerIcon}
               alt="hamburger-menu-icon"
             />
           </button>
