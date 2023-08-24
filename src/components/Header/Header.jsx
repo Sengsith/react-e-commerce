@@ -26,7 +26,7 @@ const Header = () => {
           >
             <img
               id="icon-hamburger"
-              src="./src/assets/images/icon-menu.svg"
+              src="src/assets/images/icon-menu.svg"
               alt="hamburger-menu-icon"
             />
           </button>
@@ -40,13 +40,13 @@ const Header = () => {
             </ul>
           )}
         </nav>
-        <img src="./src/assets/images/logo.svg" alt="sneakers-logo"></img>
+        <img src="/src/assets/images/logo.svg" alt="sneakers-logo"></img>
       </div>
       <div className="header-right">
         <CustomCart fill="#69707D" />
         <img
           id="avatar"
-          src="./src/assets/images/image-avatar.png"
+          src="/src/assets/images/image-avatar.png"
           alt="avatar-headshot"
         ></img>
       </div>
