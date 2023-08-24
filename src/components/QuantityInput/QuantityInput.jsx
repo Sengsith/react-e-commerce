@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-import "/src/components/QuantityInput/quantity_input.css";
+import "./Quantity_input.css";
 
 const MAX_QUANTITY = 3;
 

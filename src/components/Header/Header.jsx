@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import "/src/components/Header/header.css";
+import "./Header.css";
 
 import CustomCart from "/src/components/CustomIcons/CustomCart.jsx";
 

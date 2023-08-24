@@ -1,8 +1,8 @@
 import React from "react";
 
-import "/src/components/Product/product.css";
-import QuantityInput from "/src/components/QuantityInput/QuantityInput.jsx";
-import AddToCart from "/src/components/AddToCart/AddToCart.jsx";
+import "./Product.css";
+import QuantityInput from "../QuantityInput/QuantityInput.jsx";
+import AddToCart from "../AddToCart/AddToCart.jsx";
 
 const Product = () => {
   return (
