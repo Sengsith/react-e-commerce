@@ -4,7 +4,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid limegreen !important; */
   padding: var(--padding-inline);
 }
 
@@ -14,7 +13,6 @@
   justify-content: flex-end;
   align-items: flex-end;
   gap: 1em;
-  /* border: 1px solid red !important; */
 }
 
 #icon-cart,
@@ -22,20 +20,25 @@
   width: 20%;
 }
 
-.menu-bg-active {
+#nav-container {
   position: fixed;
-  z-index: 10;
   inset: 0;
+  z-index: 10;
+  transform: translateX(-100%);
+  transition: 150ms ease-in-out;
+  background-color: var(--clr-neutral-black-o);
+}
+.nav-container-active {
+  transform: translateX(0%) !important;
   background-color: var(--clr-neutral-black-o);
 }
 
-.header-nav-active {
+#header-nav {
   position: fixed;
-  z-index: 20;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 35%;
+  right: 30%;
   padding: var(--padding-inline);
   background-color: var(--clr-neutral-white);
 }

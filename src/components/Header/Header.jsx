@@ -13,37 +13,53 @@ const Header = () => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 
   const toggleMenu = () => {
+    const navContainer = document.querySelector("#nav-container");
     const navMenu = document.querySelector("#header-nav");
-    const menuBg = document.querySelector("#menu-bg");
+
+    // After user clicks to toggle menu, toggle the current navContainer aria-hidden attirubte
+    navContainer.setAttribute("aria-hidden", isMenuExpanded);
 
     // Toggle isMenuExpanded
     setIsMenuExpanded((prevIsMenuExpanded) => !prevIsMenuExpanded);
 
-    // Also want to toggle menu-bg-active and header-nav-active
+    // Toggle menu-bg-active and header-nav-active
+    navContainer.classList.toggle("nav-container-active");
     navMenu.classList.toggle("header-nav-active");
-    menuBg.classList.toggle("menu-bg-active");
   };
 
   return (
     <header className="primary-header">
       <div className="header-left">
-        <div id="menu-bg"></div>
-        <nav id="header-nav">
-          <button
-            id="hamburger-btn"
-            onClick={toggleMenu}
-            aria-haspopup="true"
-            aria-expanded="false"
-            aria-label="Menu"
-            aria-controls="nav-menu"
-          >
-            <img
-              id="icon-hamburger"
-              src={isMenuExpanded ? CloseIcon : HamburgerIcon}
-              alt="hamburger-menu-icon"
-            />
-          </button>
-          {isMenuExpanded && (
+        <button
+          id="hamburger-btn"
+          onClick={toggleMenu}
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-label="Menu"
+          aria-controls="nav-menu"
+        >
+          <img
+            id="icon-hamburger"
+            src={HamburgerIcon}
+            alt="hamburger-menu-icon"
+          />
+        </button>
+        <div id="nav-container" aria-hidden="true">
+          <nav id="header-nav">
+            <button
+              id="hamburger-btn"
+              onClick={toggleMenu}
+              aria-haspopup="true"
+              aria-expanded="true"
+              aria-label="Menu"
+              aria-controls="nav-menu"
+            >
+              <img
+                id="icon-hamburger"
+                src={CloseIcon}
+                alt="hamburger-menu-icon"
+              />
+            </button>
             <ul id="nav-menu" aria-labelledby="hamburger">
               <a className="nav-menu-item" href="#">
                 Collections
@@ -61,8 +77,8 @@ const Header = () => {
                 Contact
               </a>
             </ul>
-          )}
-        </nav>
+          </nav>
+        </div>
         <img src={SneakersLogo} alt="sneakers-logo"></img>
       </div>
       <div className="header-right">
