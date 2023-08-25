@@ -12,8 +12,17 @@ const QuantityInput = () => {
 
   const quantityInputRef = useRef(null);
 
+  const changeQuantity = (e) => {
+    if (e.target.getAttribute("aria-label") === "subtract") {
+      decrementQuantity();
+    }
+    if (e.target.getAttribute("aria-label") === "add") {
+      incrementQuantity();
+    }
+  };
+
   // Decrement quantity on click on minus button
-  const decrementQuantity = () => {
+  const decrementQuantity = (e) => {
     setQuantity((prevQuantity) => {
       // Do nothing if trying to click to subtract under 0
       if (prevQuantity === 0) {
@@ -54,12 +63,11 @@ const QuantityInput = () => {
   };
 
   return (
-    <div className="quantity-container">
+    <div className="quantity-container" onClick={changeQuantity}>
       <button
         className="quantity-button"
         id="subtract-button"
         aria-label="subtract"
-        onClick={decrementQuantity}
       >
         <img src={MinusIcon} alt="minus" />
       </button>
@@ -73,12 +81,7 @@ const QuantityInput = () => {
         onChange={handleOnInputChange}
         onBlur={handleOnInputBlur}
       />
-      <button
-        className="quantity-button"
-        id="add-button"
-        aria-label="add"
-        onClick={incrementQuantity}
-      >
+      <button className="quantity-button" id="add-button" aria-label="add">
         <img src={PlusIcon} alt="plus" />
       </button>
     </div>
