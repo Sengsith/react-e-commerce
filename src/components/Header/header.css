@@ -55,3 +55,6 @@
   font-size: 1.15rem;
   font-weight: 700;
 }
+.nav-menu-item:hover {
+  color: var(--clr-primary-orange);
+}
