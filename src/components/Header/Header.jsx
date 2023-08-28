@@ -8,9 +8,11 @@ import SneakersLogo from "/src/assets/images/logo.svg";
 import Avatar from "/src/assets/images/image-avatar.png";
 
 import CustomCart from "/src/components/CustomIcons/CustomCart.jsx";
+import Cart from "/src/components/Cart/Cart.jsx";
 
 const Header = () => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
+  const [isCartExpanded, setIsCartExpanded] = useState(false);
 
   const toggleMenu = () => {
     const navContainer = document.querySelector("#nav-container");
@@ -83,8 +85,10 @@ const Header = () => {
       </div>
       <div className="header-right">
         <CustomCart fill="#69707D" />
+        {/* TODO: Cart becomes black on expanded*/}
         <img id="avatar" src={Avatar} alt="avatar-headshot"></img>
       </div>
+      <Cart />
     </header>
   );
 };
