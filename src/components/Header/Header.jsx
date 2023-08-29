@@ -17,16 +17,33 @@ const Header = () => {
   const toggleMenu = () => {
     const navContainer = document.querySelector("#nav-container");
     const navMenu = document.querySelector("#header-nav");
-
-    // After user clicks to toggle menu, toggle the current navContainer aria-hidden attirubte
+    const hamburgerBtn = document.querySelector("#hamburger-btn");
+    const closeBtn = document.querySelector("#close-btn");
+    // After user clicks to toggle menu, toggle the current navContainer,hamburgerBtn, and closeBtn aria attirubtes
+    hamburgerBtn.setAttribute("aria-expanded", !isMenuExpanded);
+    closeBtn.setAttribute("aria-expanded", !isMenuExpanded);
     navContainer.setAttribute("aria-hidden", isMenuExpanded);
 
-    // Toggle isMenuExpanded
-    setIsMenuExpanded((prevIsMenuExpanded) => !prevIsMenuExpanded);
-
-    // Toggle menu-bg-active and header-nav-active
+    // Toggle menu-bg-active and header-nav-active classes
     navContainer.classList.toggle("nav-container-active");
     navMenu.classList.toggle("header-nav-active");
+
+    // Toggle isMenuExpanded last due to asynchrony
+    setIsMenuExpanded((prevIsMenuExpanded) => !prevIsMenuExpanded);
+  };
+
+  const toggleCart = () => {
+    const cartContainer = document.querySelector("#cart-container");
+    const cartBtn = document.querySelector("#cart-btn");
+    // After user clicks to toggle cart, toggle the current cartContainer aria attirubte
+    cartBtn.setAttribute("aria-expanded", !isCartExpanded);
+    cartContainer.setAttribute("aria-hidden", isCartExpanded);
+
+    // Toggle cart-active classes
+    cartContainer.classList.toggle("cart-container-active");
+
+    // Toggle isCartExpanded last due to asynchrony
+    setIsCartExpanded((prevIsCartExpanded) => !prevIsCartExpanded);
   };
 
   return (
@@ -49,10 +66,10 @@ const Header = () => {
         <div id="nav-container" aria-hidden="true">
           <nav id="header-nav">
             <button
-              id="hamburger-btn"
+              id="close-btn"
               onClick={toggleMenu}
               aria-haspopup="true"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-label="Menu"
               aria-controls="nav-menu"
             >
@@ -62,7 +79,7 @@ const Header = () => {
                 alt="hamburger-menu-icon"
               />
             </button>
-            <ul id="nav-menu" aria-labelledby="hamburger">
+            <ul id="nav-menu" aria-labelledby="hamburger-btn">
               <a className="nav-menu-item" href="#">
                 Collections
               </a>
@@ -84,9 +101,21 @@ const Header = () => {
         <img src={SneakersLogo} alt="sneakers-logo"></img>
       </div>
       <div className="header-right">
-        <CustomCart fill="#69707D" />
-        {/* TODO: Cart becomes black on expanded*/}
-        <img id="avatar" src={Avatar} alt="avatar-headshot"></img>
+        <button
+          id="cart-btn"
+          onClick={toggleCart}
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-label="Cart"
+          aria-controls="cart-container"
+        >
+          <CustomCart fill={isCartExpanded ? "#000000" : "#69707D"} />
+        </button>
+        <img
+          id="avatar"
+          src={Avatar}
+          alt="Head shot of a man with frizzy shoulder-length hair. He is wearing sunglasses and a blue crew neck shirt."
+        ></img>
       </div>
       <Cart />
     </header>

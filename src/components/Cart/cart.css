@@ -1,16 +1,20 @@
 @import "/src/variables.css";
 
-.cart-container {
-  display: none;
+#cart-container {
+  position: fixed;
   margin-inline: .5rem;
-  position: absolute;
   z-index: 10;
+  top: 5.5rem;
   left: 0;
   right: 0;
-  bottom: -17.5rem;
+  transform: translateX(110%);
+  transition: 150ms ease-in-out;
+}
+.cart-container-active {
+  transform: translateX(0%) !important;
 }
 
-.cart-wrapper {
+#cart-wrapper {
   background-color: var(--clr-neutral-white);
   margin-left: auto;
   max-width: 25rem;
@@ -19,16 +23,16 @@
   display: flex;
   flex-direction: column;
 }
-.cart-wrapper > hr {
+#cart-wrapper > hr {
   color: var(--clr-neutral-light-grayblue);
 }
 
-.cart-title {
+#cart-title {
   text-align: start;
   padding: 1.5rem;
 }
 
-.cart-empty {
+#cart-empty {
   color: var(--clr-neutral-darkgrayblue);
   margin: auto;
 }
