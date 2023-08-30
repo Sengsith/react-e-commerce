@@ -6,6 +6,8 @@ import HamburgerIcon from "/src/assets/images/icon-menu.svg";
 import CloseIcon from "/src/assets/images/icon-close.svg";
 import SneakersLogo from "/src/assets/images/logo.svg";
 
+import NavToggleButton from "/src/components/Header/NavToggleButton/NavToggleButton.jsx";
+
 const HeaderLeft = () => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 
@@ -28,54 +30,39 @@ const HeaderLeft = () => {
     setIsMenuExpanded((prevIsMenuExpanded) => !prevIsMenuExpanded);
   };
 
+  const openNavButton = {
+    id: "hamburger-btn",
+    imgIcon: HamburgerIcon,
+    imgId: "icon-hamburger",
+    imgAlt: "hamburger menu bars",
+  };
+
+  const closeNavButton = {
+    id: "close-btn",
+    imgIcon: CloseIcon,
+    imgId: "icon-close",
+    imgAlt: "close menu x-shape",
+  };
+
+  const navItems = ["Collections", "Men", "Women", "About", "Contact"];
+
   return (
     <div className="header-left">
-      <button
-        id="hamburger-btn"
-        onClick={toggleMenu}
-        aria-haspopup="true"
-        aria-expanded="false"
-        aria-label="Menu"
-        aria-controls="nav-menu"
-      >
-        <img
-          id="icon-hamburger"
-          src={HamburgerIcon}
-          alt="hamburger-menu-icon"
-        />
-      </button>
+      <NavToggleButton buttonData={openNavButton} toggleMenu={toggleMenu} />
       <div id="nav-container" aria-hidden="true">
         <nav id="header-nav">
-          <button
-            id="close-btn"
-            onClick={toggleMenu}
-            aria-haspopup="true"
-            aria-expanded="false"
-            aria-label="Menu"
-            aria-controls="nav-menu"
-          >
-            <img
-              id="icon-hamburger"
-              src={CloseIcon}
-              alt="hamburger-menu-icon"
-            />
-          </button>
+          <NavToggleButton
+            buttonData={closeNavButton}
+            toggleMenu={toggleMenu}
+          />
           <ul id="nav-menu" aria-labelledby="hamburger-btn">
-            <a className="nav-menu-item" href="#">
-              Collections
-            </a>
-            <a className="nav-menu-item" href="#">
-              Men
-            </a>
-            <a className="nav-menu-item" href="#">
-              Women
-            </a>
-            <a className="nav-menu-item" href="#">
-              About
-            </a>
-            <a className="nav-menu-item" href="#">
-              Contact
-            </a>
+            {navItems.map((navItem, index) => {
+              return (
+                <a key={index} className="nav-menu-item" href="#">
+                  {navItem}
+                </a>
+              );
+            })}
           </ul>
         </nav>
       </div>
