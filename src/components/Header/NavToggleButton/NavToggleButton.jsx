@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./nav_toggle_button.css";
+
 const NavToggleButton = ({ buttonData, toggleMenu }) => {
   return (
     <button

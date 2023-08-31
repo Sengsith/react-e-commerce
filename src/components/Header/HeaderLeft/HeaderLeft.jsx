@@ -50,11 +50,13 @@ const HeaderLeft = () => {
     <div className="header-left">
       <NavToggleButton buttonData={openNavButton} toggleMenu={toggleMenu} />
       <div id="nav-container" aria-hidden="true">
+        {/* 
+        props:
+        nav id,
+
+        */}
+        <NavToggleButton buttonData={closeNavButton} toggleMenu={toggleMenu} />
         <nav id="header-nav">
-          <NavToggleButton
-            buttonData={closeNavButton}
-            toggleMenu={toggleMenu}
-          />
           <ul id="nav-menu" aria-labelledby="hamburger-btn">
             {navItems.map((navItem, index) => {
               return (
