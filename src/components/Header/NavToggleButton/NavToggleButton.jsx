@@ -10,7 +10,7 @@ const NavToggleButton = ({ buttonData, toggleMenu }) => {
       aria-haspopup="true"
       aria-expanded="false"
       aria-label="Menu"
-      aria-controls="nav-menu"
+      aria-controls="header-nav-menu"
     >
       <img
         id={buttonData.imgId}

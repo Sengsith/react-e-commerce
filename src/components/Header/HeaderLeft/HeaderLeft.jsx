@@ -7,13 +7,14 @@ import CloseIcon from "/src/assets/images/icon-close.svg";
 import SneakersLogo from "/src/assets/images/logo.svg";
 
 import NavToggleButton from "/src/components/Header/NavToggleButton/NavToggleButton.jsx";
+import NavMenu from "/src/components/NavMenu/NavMenu.jsx";
 
 const HeaderLeft = () => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 
   const toggleMenu = () => {
     const navContainer = document.querySelector("#nav-container");
-    const navMenu = document.querySelector("#header-nav");
+    const navMenu = document.querySelector("#header-nav-menu");
     const hamburgerBtn = document.querySelector("#hamburger-btn");
     const closeBtn = document.querySelector("#close-btn");
 
@@ -30,6 +31,7 @@ const HeaderLeft = () => {
     setIsMenuExpanded((prevIsMenuExpanded) => !prevIsMenuExpanded);
   };
 
+  // Object prop to pass into NavToggleButton to open menu
   const openNavButton = {
     id: "hamburger-btn",
     imgIcon: HamburgerIcon,
@@ -37,6 +39,7 @@ const HeaderLeft = () => {
     imgAlt: "hamburger menu bars",
   };
 
+  // Object prop to pass into NavToggleButton to close menu
   const closeNavButton = {
     id: "close-btn",
     imgIcon: CloseIcon,
@@ -44,31 +47,24 @@ const HeaderLeft = () => {
     imgAlt: "close menu x-shape",
   };
 
+  // Array prop to pass into NavMenu for anchor tags
   const navItems = ["Collections", "Men", "Women", "About", "Contact"];
 
   return (
     <div className="header-left">
       <NavToggleButton buttonData={openNavButton} toggleMenu={toggleMenu} />
       <div id="nav-container" aria-hidden="true">
-        {/* 
-        props:
-        nav id,
-
-        */}
         <NavToggleButton buttonData={closeNavButton} toggleMenu={toggleMenu} />
-        <nav id="header-nav">
-          <ul id="nav-menu" aria-labelledby="hamburger-btn">
-            {navItems.map((navItem, index) => {
-              return (
-                <a key={index} className="nav-menu-item" href="#">
-                  {navItem}
-                </a>
-              );
-            })}
-          </ul>
-        </nav>
+        <NavMenu
+          navId="header-nav-menu"
+          navItems={navItems}
+          isCollapsable={true}
+        />
       </div>
-      <img src={SneakersLogo} alt="sneakers-logo"></img>
+      <img
+        src={SneakersLogo}
+        alt="The logo for the company with the woord 'sneakers' in black font color."
+      ></img>
     </div>
   );
 };

@@ -9,29 +9,3 @@
 .nav-container-active {
   transform: translateX(0%) !important;
 }
-
-#header-nav {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 30%;
-  padding: var(--padding-inline);
-  background-color: var(--clr-neutral-white);
-}
-
-#nav-menu {
-  margin-top: 3rem;
-}
-
-.nav-menu-item {
-  display: block;
-  margin-bottom: 1rem;
-  text-align: start;
-  color: var(--clr-neutral-black);
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-.nav-menu-item:hover {
-  color: var(--clr-primary-orange);
-}
