@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "/src/components/App/App.jsx";
 
 import Avatar from "/src/assets/images/image-avatar.png";
 import CustomCart from "/src/components/CustomIcons/CustomCart.jsx";

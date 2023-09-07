@@ -2,7 +2,6 @@ import React from "react";
 
 import "./product.css";
 import QuantityInput from "../QuantityInput/QuantityInput.jsx";
-import AddToCart from "../AddToCart/AddToCart.jsx";
 
 const Product = () => {
   return (
@@ -22,7 +21,6 @@ const Product = () => {
         <div className="product-pricing__original">$250.00</div>
       </div>
       <QuantityInput />
-      <AddToCart />
     </div>
   );
 };

@@ -1,5 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
+import { CartContext } from "/src/components/App/App.jsx";
 
+import AddToCart from "../AddToCart/AddToCart.jsx";
 import "./quantity_input.css";
 
 import MinusIcon from "/src/assets/images/icon-minus.svg";
@@ -9,6 +11,7 @@ const MAX_QUANTITY = 3;
 
 const QuantityInput = () => {
   const [quantity, setQuantity] = useState(0);
+  const [cart, setCart] = useContext(CartContext);
 
   const quantityInputRef = useRef(null);
 
@@ -22,7 +25,7 @@ const QuantityInput = () => {
   };
 
   // Decrement quantity on click on minus button
-  const decrementQuantity = (e) => {
+  const decrementQuantity = () => {
     setQuantity((prevQuantity) => {
       // Do nothing if trying to click to subtract under 0
       if (prevQuantity === 0) {
@@ -54,6 +57,21 @@ const QuantityInput = () => {
     setQuantity(orderQuantity);
   };
 
+  const handleOnKeyDown = (e) => {
+    if (e.key === "Enter") {
+      addToCart();
+    }
+  };
+
+  const addToCart = () => {
+    const productToAdd = {
+      name: "Fall Limited Edition Sneakers",
+      price: 125,
+      quantity: quantityInputRef.current.value,
+    };
+    setCart(productToAdd);
+  };
+
   // User clicks off of quantity input field
   const handleOnInputBlur = (e) => {
     // User deletes value and clicks off, reset to 0
@@ -63,27 +81,32 @@ const QuantityInput = () => {
   };
 
   return (
-    <div className="quantity-container" onClick={changeQuantity}>
-      <button
-        className="quantity-button"
-        id="subtract-button"
-        aria-label="subtract"
-      >
-        <img src={MinusIcon} alt="minus" />
-      </button>
-      <input
-        type="number"
-        name="quantity"
-        id="quantity-input"
-        aria-label="quantity"
-        ref={quantityInputRef}
-        value={`${quantity}`}
-        onChange={handleOnInputChange}
-        onBlur={handleOnInputBlur}
-      />
-      <button className="quantity-button" id="add-button" aria-label="add">
-        <img src={PlusIcon} alt="plus" />
-      </button>
+    <div>
+      <div className="quantity-container" onClick={changeQuantity}>
+        <button
+          className="quantity-button"
+          id="subtract-button"
+          aria-label="subtract"
+        >
+          <img src={MinusIcon} alt="minus" />
+        </button>
+        <input
+          type="number"
+          inputMode="numeric"
+          name="quantity"
+          id="quantity-input"
+          aria-label="quantity"
+          ref={quantityInputRef}
+          value={`${quantity}`}
+          onChange={handleOnInputChange}
+          onKeyDown={handleOnKeyDown}
+          onBlur={handleOnInputBlur}
+        />
+        <button className="quantity-button" id="add-button" aria-label="add">
+          <img src={PlusIcon} alt="plus" />
+        </button>
+      </div>
+      <AddToCart cart={cart} addToCart={addToCart} />
     </div>
   );
 };
