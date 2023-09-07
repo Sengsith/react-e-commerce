@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 import "./app.css";
 
@@ -10,6 +10,10 @@ export const CartContext = createContext();
 
 const App = () => {
   const [cart, setCart] = useState({});
+
+  useEffect(() => {
+    console.log(JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <div className="App">
