@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import { CartContext } from "/src/components/App/App.jsx";
 
+import Thumbnail1 from "/src/assets/images/image-product-1-thumbnail.jpg";
+import DeleteIcon from "/src/assets/images/icon-delete.svg";
+
 import "./cart.css";
 
 const Cart = () => {
@@ -11,10 +14,31 @@ const Cart = () => {
       <div id="cart-wrapper">
         <div id="cart-title">Cart</div>
         <hr></hr>
-        <div className="cart-items">
-          {Object.keys(cart).length === 0
-            ? "Your cart is empty."
-            : JSON.stringify(cart)}
+        <div className="cart-items-container">
+          {Object.keys(cart).length === 0 ? (
+            <div>Your cart is empty.</div>
+          ) : (
+            <div className="cart-items-wrapper">
+              <div className="cart-item">
+                <img
+                  id="cart-thumbnail"
+                  src={Thumbnail1}
+                  alt="Right beige shoe in foreground facing camera. Underside of leftshoe standing up from toe-side being shown in background."
+                ></img>
+                <div className="cart-item-details">
+                  <div id="cart-filled_title">{cart.name}</div>
+                  <div className="cart-filled-price">
+                    ${cart.price.toFixed(2)} x {cart.quantity}{" "}
+                    <span className="cart-subtotal">
+                      ${(cart.price * cart.quantity).toFixed(2)}
+                    </span>
+                  </div>
+                </div>
+                <img src={DeleteIcon}></img>
+              </div>
+              <button className="checkout-btn">Checkout</button>
+            </div>
+          )}
         </div>
       </div>
     </div>

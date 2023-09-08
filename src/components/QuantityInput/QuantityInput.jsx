@@ -66,10 +66,12 @@ const QuantityInput = () => {
   const addToCart = () => {
     const productToAdd = {
       name: "Fall Limited Edition Sneakers",
-      price: 125,
+      price: 125.0,
       quantity: quantityInputRef.current.value,
     };
-    setCart(productToAdd);
+    if (quantityInputRef.current.value > 0) {
+      setCart(productToAdd);
+    }
   };
 
   // User clicks off of quantity input field
