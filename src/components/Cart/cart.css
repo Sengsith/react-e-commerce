@@ -9,6 +9,7 @@
   right: 0;
   transform: translateX(110%);
   transition: 150ms ease-in-out;
+  box-shadow: 9px 20px 35px -20px var(--clr-neutral-black);
 }
 .cart-container-active {
   transform: translateX(0%) !important;

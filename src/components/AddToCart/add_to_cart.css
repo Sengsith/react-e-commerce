@@ -10,4 +10,5 @@
   padding: 1rem;
   border-radius: .75rem;
   background-color: var(--clr-primary-orange);
+  box-shadow: 9px 20px 35px -20px var(--clr-primary-orange);
 }
