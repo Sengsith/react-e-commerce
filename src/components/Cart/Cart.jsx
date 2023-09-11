@@ -9,6 +9,12 @@ import "./cart.css";
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
 
+  // Sets cart to empty, does not account for if cart is able to hold 2 or more unique products
+  const handleDeleteItem = () => {
+    // Set cart to an empty object
+    setCart({});
+  };
+
   return (
     <div id="cart-container" aria-hidden="true" aria-labelledby="cart-btn">
       <div id="cart-wrapper">
@@ -34,7 +40,9 @@ const Cart = () => {
                     </span>
                   </div>
                 </div>
-                <img src={DeleteIcon}></img>
+                <button onClick={handleDeleteItem}>
+                  <img src={DeleteIcon}></img>
+                </button>
               </div>
               <button className="checkout-btn">Checkout</button>
             </div>

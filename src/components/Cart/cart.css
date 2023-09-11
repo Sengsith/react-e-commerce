@@ -17,6 +17,7 @@
 #cart-wrapper {
   background-color: var(--clr-neutral-white);
   margin-left: auto;
+  min-height: 18rem;
   max-width: 30rem;
   border-radius: .5rem;
   display: flex;
@@ -28,11 +29,12 @@
 
 #cart-title {
   text-align: start;
-  padding: 1.5rem;
+  padding-block: 1.5rem;
+  padding-inline: 2rem;
 }
 
 .cart-items-container {
-  width: 90%;
+  width: 85%;
   color: var(--clr-neutral-darkgrayblue);
   margin: auto;
 }
