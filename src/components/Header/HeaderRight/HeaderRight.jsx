@@ -31,7 +31,10 @@ const HeaderRight = () => {
         aria-label="Cart"
         aria-controls="cart-container"
       >
-        <CustomCart fill={isCartExpanded ? "#000000" : "#69707D"} />
+        <CustomCart
+          fill={isCartExpanded ? "#000000" : "#69707D"}
+          isHeader={true}
+        />
       </button>
       <img
         id="avatar"

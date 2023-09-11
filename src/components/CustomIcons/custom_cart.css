@@ -1,0 +1,15 @@
+@import "/src/variables.css";
+
+.cart-header-container {
+  position: relative;
+}
+
+#cart-header-quantity {
+  position: absolute;
+  color: var(--clr-neutral-white);
+  background-color: var(--clr-primary-orange);
+  width: 100%;
+  top: -.5rem;
+  right: -.5rem;
+  border-radius: .5rem;
+}

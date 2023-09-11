@@ -8,7 +8,7 @@ const AddToCart = ({ addToCart }) => {
   return (
     <>
       <button className="add-to-cart-button" onClick={addToCart}>
-        <CustomCart fill="white" />
+        <CustomCart fill="white" isHeader={false} />
         Add to cart
       </button>
     </>
