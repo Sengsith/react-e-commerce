@@ -53,6 +53,10 @@ const HeaderLeft = () => {
   return (
     <div className="header-left">
       <NavToggleButton buttonData={openNavButton} toggleMenu={toggleMenu} />
+      <img
+        src={SneakersLogo}
+        alt="The logo for the company with the woord 'sneakers' in black font color."
+      ></img>
       <div id="nav-container" aria-hidden="true">
         <NavToggleButton buttonData={closeNavButton} toggleMenu={toggleMenu} />
         <NavMenu
@@ -61,10 +65,6 @@ const HeaderLeft = () => {
           isCollapsable={true}
         />
       </div>
-      <img
-        src={SneakersLogo}
-        alt="The logo for the company with the woord 'sneakers' in black font color."
-      ></img>
     </div>
   );
 };

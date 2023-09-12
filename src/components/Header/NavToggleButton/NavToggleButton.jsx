@@ -5,6 +5,7 @@ import "./nav_toggle_button.css";
 const NavToggleButton = ({ buttonData, toggleMenu }) => {
   return (
     <button
+      className="nav-menu-btn"
       id={buttonData.id}
       onClick={toggleMenu}
       aria-haspopup="true"

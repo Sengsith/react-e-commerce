@@ -12,6 +12,7 @@ const Header = () => {
       <HeaderLeft />
       <HeaderRight />
       <Cart />
+      <hr id="header-bar"></hr>
     </header>
   );
 };

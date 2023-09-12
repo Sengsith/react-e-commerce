@@ -1,3 +1,5 @@
+@import "/src/variables.css";
+
 #header-nav-menu {
   position: fixed;
   top: 0;
@@ -22,4 +24,21 @@
 }
 .nav-menu-item:hover {
   color: var(--clr-primary-orange);
+}
+
+@media (width >= 700px) {
+  #header-nav-menu {
+    position: relative;
+    padding: 0;
+  }
+  #header-nav-menu > ul {
+    margin-top: 0;
+  }
+
+  .nav-menu-item {
+    display: inline;
+    color: var(--clr-neutral-grayblue);
+    font-weight: 400;
+    margin-left: .5rem;
+  }
 }

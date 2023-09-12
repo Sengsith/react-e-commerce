@@ -4,3 +4,9 @@
   top: 2rem;
   left: 1.5rem;
 }
+
+@media (width >= 700px) {
+  .nav-menu-btn {
+    display: none;
+  }
+}
