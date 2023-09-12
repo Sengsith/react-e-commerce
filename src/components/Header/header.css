@@ -21,6 +21,10 @@
   width: 20%;
 }
 
+#header-bar {
+  display: none;
+}
+
 @media (width >= 700px) {
   .header-left,
   .header-right {
@@ -32,6 +36,7 @@
   }
 
   #header-bar {
+    display: block;
     position: absolute;
     height: 1px;
     border: none;
