@@ -3,3 +3,13 @@
   margin: 0 auto;
   text-align: center;
 }
+
+@media (width >= 700px) {
+  main {
+    margin-top: 5rem;
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
