@@ -1,5 +1,6 @@
-import React, { useState, useRef, useContext } from "react";
-import { CartContext } from "/src/shared/CartContext.jsx";
+import React, { useState, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setCart } from "/src/redux/cart.js";
 
 import AddToCart from "../AddToCart/AddToCart.jsx";
 import "./quantity_input.css";
@@ -11,7 +12,8 @@ const MAX_QUANTITY = 3;
 
 const QuantityInput = () => {
   const [quantity, setQuantity] = useState(0);
-  const { cart, setCart } = useContext(CartContext);
+  const { cart } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   const quantityInputRef = useRef(null);
 
@@ -70,7 +72,7 @@ const QuantityInput = () => {
       quantity: quantityInputRef.current.value,
     };
     if (quantityInputRef.current.value > 0) {
-      setCart(productToAdd);
+      dispatch(setCart(productToAdd));
     }
   };
 

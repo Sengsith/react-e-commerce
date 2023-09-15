@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
-
-import { CartContext } from "/src/shared/CartContext.jsx";
+import React from "react";
+import { useSelector } from "react-redux";
 
 import "./custom_cart.css";
 
 // Simple cart icon that takes in a fill prop to differentiate color
 // Mainly for header and add to cart buttons
 const CustomCart = ({ fill, isHeader }) => {
-  const { cart } = useContext(CartContext);
+  const { cart } = useSelector((state) => state.cart);
 
   return (
     <div className="cart-header-container">

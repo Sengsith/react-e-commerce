@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
-import { CartContext } from "/src/shared/CartContext.jsx";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setCart } from "/src/redux/cart.js";
 
 import Thumbnail1 from "/src/assets/images/image-product-1-thumbnail.jpg";
 import DeleteIcon from "/src/assets/images/icon-delete.svg";
@@ -7,12 +8,13 @@ import DeleteIcon from "/src/assets/images/icon-delete.svg";
 import "./cart.css";
 
 const Cart = () => {
-  const { cart, setCart } = useContext(CartContext);
+  const { cart } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   // Sets cart to empty, does not account for if cart is able to hold 2 or more unique products
   const handleDeleteItem = () => {
     // Set cart to an empty object
-    setCart({});
+    dispatch(setCart({}));
   };
 
   return (
