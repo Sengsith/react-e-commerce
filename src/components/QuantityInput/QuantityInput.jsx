@@ -1,5 +1,5 @@
 import React, { useState, useRef, useContext } from "react";
-import { CartContext } from "/src/components/App/App.jsx";
+import { CartContext } from "/src/shared/CartContext.jsx";
 
 import AddToCart from "../AddToCart/AddToCart.jsx";
 import "./quantity_input.css";
@@ -11,7 +11,7 @@ const MAX_QUANTITY = 3;
 
 const QuantityInput = () => {
   const [quantity, setQuantity] = useState(0);
-  const [cart, setCart] = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
 
   const quantityInputRef = useRef(null);
 

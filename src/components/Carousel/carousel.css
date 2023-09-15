@@ -48,13 +48,3 @@
 .carousel-arrow > img {
   pointer-events: none;
 }
-
-@media (width >= 700px) {
-  .carousel-wrapper {
-    
-  }
-
-  .carousel-element > img {
-    border-radius: .5rem;
-  }
-}

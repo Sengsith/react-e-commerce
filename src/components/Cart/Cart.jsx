@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CartContext } from "/src/components/App/App.jsx";
+import { CartContext } from "/src/shared/CartContext.jsx";
 
 import Thumbnail1 from "/src/assets/images/image-product-1-thumbnail.jpg";
 import DeleteIcon from "/src/assets/images/icon-delete.svg";
@@ -7,7 +7,7 @@ import DeleteIcon from "/src/assets/images/icon-delete.svg";
 import "./cart.css";
 
 const Cart = () => {
-  const [cart, setCart] = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
 
   // Sets cart to empty, does not account for if cart is able to hold 2 or more unique products
   const handleDeleteItem = () => {

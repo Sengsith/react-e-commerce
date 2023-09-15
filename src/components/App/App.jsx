@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react";
+import React from "react";
+import { CartProvider } from "/src/shared/CartContext.jsx";
 
 import "./app.css";
 
@@ -6,20 +7,16 @@ import Header from "../Header/Header.jsx";
 import Carousel from "../Carousel/Carousel.jsx";
 import Product from "../Product/Product.jsx";
 
-export const CartContext = createContext();
-
 const App = () => {
-  const [cart, setCart] = useState({});
-
   return (
     <div className="App">
-      <CartContext.Provider value={[cart, setCart]}>
+      <CartProvider>
         <Header />
         <main>
           <Carousel />
           <Product />
         </main>
-      </CartContext.Provider>
+      </CartProvider>
     </div>
   );
 };

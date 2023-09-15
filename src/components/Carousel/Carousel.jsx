@@ -2,14 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./carousel.css";
 
-import ProductImage1 from "/src/assets/images/image-product-1.jpg";
-import ThumbnailImage1 from "/src/assets/images/image-product-1-thumbnail.jpg";
-import ProductImage2 from "/src/assets/images/image-product-2.jpg";
-import ThumbnailImage2 from "/src/assets/images/image-product-2-thumbnail.jpg";
-import ProductImage3 from "/src/assets/images/image-product-3.jpg";
-import ThumbnailImage3 from "/src/assets/images/image-product-3-thumbnail.jpg";
-import ProductImage4 from "/src/assets/images/image-product-4.jpg";
-import ThumbnailImage4 from "/src/assets/images/image-product-4-thumbnail.jpg";
+import { PRODUCT_IMAGES } from "/src/shared/product-images.jsx";
 
 import IconPrevious from "/src/assets/images/icon-previous.svg";
 import IconNext from "/src/assets/images/icon-next.svg";
@@ -52,37 +45,20 @@ const Carousel = () => {
     };
   }, [currentWindowWidth]);
 
-  const gallery = [
-    {
-      id: 1,
-      image: ProductImage1,
-      thumbnail: ThumbnailImage1,
-    },
-    {
-      id: 2,
-      image: ProductImage2,
-      thumbnail: ThumbnailImage2,
-    },
-    {
-      id: 3,
-      image: ProductImage3,
-      thumbnail: ThumbnailImage3,
-    },
-    {
-      id: 4,
-      image: ProductImage4,
-      thumbnail: ThumbnailImage4,
-    },
-  ];
-
   const updateArrowImageId = (e) => {
     // First image and prev arrow clicked
-    if (currentId === gallery[0].id && e.target.id === "previous-arrow") {
-      setCurrentId(gallery.length);
+    if (
+      currentId === PRODUCT_IMAGES[0].id &&
+      e.target.id === "previous-arrow"
+    ) {
+      setCurrentId(PRODUCT_IMAGES.length);
     }
     // Last image and next arrow clicked
-    else if (currentId === gallery.length && e.target.id === "next-arrow") {
-      setCurrentId(gallery[0].id);
+    else if (
+      currentId === PRODUCT_IMAGES.length &&
+      e.target.id === "next-arrow"
+    ) {
+      setCurrentId(PRODUCT_IMAGES[0].id);
     }
     // Prev arrow clicked
     else if (e.target.id === "previous-arrow") {
@@ -94,59 +70,37 @@ const Carousel = () => {
     }
   };
 
-  const renderMobileCarousel = () => {
-    return (
-      <div className="carousel-container">
-        <a
-          href={`#image-${currentId}`}
-          className="carousel-arrow"
-          id="previous-arrow"
-          aria-label="previous-image"
-          onClick={updateArrowImageId}
-        >
-          <img src={IconPrevious} alt="left-arrow" />
-        </a>
-        <a
-          href={`#image-${currentId}`}
-          className="carousel-arrow"
-          id="next-arrow"
-          aria-label="next-image"
-          onClick={updateArrowImageId}
-        >
-          <img src={IconNext} alt="right-arrow" />
-        </a>
-        <div className="carousel-wrapper">
-          {gallery.map((image) => {
-            return (
-              <div key={image.id} className="carousel-element">
-                <img id={`image-${image.id}`} src={image.image}></img>
-              </div>
-            );
-          })}
-        </div>
+  return (
+    <div className="carousel-container">
+      <a
+        href={`#image-${currentId}`}
+        className="carousel-arrow"
+        id="previous-arrow"
+        aria-label="previous-image"
+        onClick={updateArrowImageId}
+      >
+        <img src={IconPrevious} alt="left-arrow" />
+      </a>
+      <a
+        href={`#image-${currentId}`}
+        className="carousel-arrow"
+        id="next-arrow"
+        aria-label="next-image"
+        onClick={updateArrowImageId}
+      >
+        <img src={IconNext} alt="right-arrow" />
+      </a>
+      <div className="carousel-wrapper">
+        {PRODUCT_IMAGES.map((image) => {
+          return (
+            <div key={image.id} className="carousel-element">
+              <img id={`image-${image.id}`} src={image.imageUrl}></img>
+            </div>
+          );
+        })}
       </div>
-    );
-  };
-
-  const renderDesktopCarousel = () => {
-    return (
-      <div className="carousel-container">
-        <div className="carousel-wrapper">
-          {gallery.map((image) => {
-            return (
-              <div key={image.id} className="carousel-element">
-                <img id={`image-${image.id}`} src={image.image}></img>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
-  };
-
-  return currentWindowWidth < DESKTOP_BREAKPOINT
-    ? renderMobileCarousel()
-    : renderDesktopCarousel();
+    </div>
+  );
 };
 
 export default Carousel;
