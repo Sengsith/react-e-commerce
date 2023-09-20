@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCart } from "/src/redux/cart.js";
 
-import Thumbnail1 from "/src/assets/images/image-product-1-thumbnail.jpg";
+import { PRODUCT_IMAGES } from "/src/shared/product-images.jsx";
 import DeleteIcon from "/src/assets/images/icon-delete.svg";
 
 import "./cart.css";
@@ -30,8 +30,8 @@ const Cart = () => {
               <div className="cart-item">
                 <img
                   id="cart-thumbnail"
-                  src={Thumbnail1}
-                  alt="Right beige shoe in foreground facing camera. Underside of leftshoe standing up from toe-side being shown in background."
+                  src={PRODUCT_IMAGES[0].thumbnailUrl}
+                  alt={PRODUCT_IMAGES[0].alt}
                 ></img>
                 <div className="cart-item-details">
                   <div id="cart-filled_title">{cart.name}</div>

@@ -16,8 +16,10 @@ const Product = () => {
         weather can offer.
       </p>
       <div className="product-pricing">
-        <div className="product-pricing__price">$125.00</div>
-        <div className="product-pricing__discount">50%</div>
+        <div className="product-pricing__wrapper">
+          <div className="product-pricing__price">$125.00</div>
+          <div className="product-pricing__discount">50%</div>
+        </div>
         <div className="product-pricing__original">$250.00</div>
       </div>
       <QuantityInput />

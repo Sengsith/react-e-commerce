@@ -32,6 +32,10 @@
   align-items: center;
   margin-bottom: 1rem;
 }
+.product-pricing__wrapper {
+  display: flex;
+  align-items: center;
+}
 .product-pricing__price {
   font-size: 2rem;
 }
@@ -46,4 +50,16 @@
   margin-left: auto;
   color: var(--clr-neutral-darkgrayblue);
   text-decoration: line-through;
+}
+
+@media (width >= 700px) {
+  .product-pricing {
+    display: block;
+  }
+  .product-pricing__price {
+    display: inline;
+  }
+  .product-pricing__discount {
+    padding-inline: .75rem;
+  }
 }

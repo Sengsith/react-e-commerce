@@ -1,9 +1,9 @@
-.quantity-container {
+.quantity-wrapper {
   position: relative;
   margin-bottom: 1rem;
 }
 
-.quantity-container > input {
+.quantity-wrapper > input {
   width: 100%;
   appearance: textfield;
   text-align: center;
@@ -31,4 +31,16 @@
 }
 #add-button {
   right: 0;
+}
+
+@media (width >= 700px) {
+  .quantity-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .quantity-wrapper {
+    margin-block: auto;
+  }
 }

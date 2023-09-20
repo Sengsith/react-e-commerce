@@ -6,10 +6,11 @@
 
 @media (width >= 700px) {
   main {
-    margin-top: 5rem;
-    padding-inline: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: min(5vw, 4rem);
+    margin-top: 5rem;
+    padding-inline: 4rem;
   }
 }

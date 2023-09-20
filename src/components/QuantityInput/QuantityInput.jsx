@@ -86,31 +86,33 @@ const QuantityInput = () => {
 
   return (
     <div>
-      <div className="quantity-container" onClick={changeQuantity}>
-        <button
-          className="quantity-button"
-          id="subtract-button"
-          aria-label="subtract"
-        >
-          <img src={MinusIcon} alt="minus" />
-        </button>
-        <input
-          type="number"
-          inputMode="numeric"
-          name="quantity"
-          id="quantity-input"
-          aria-label="quantity"
-          ref={quantityInputRef}
-          value={`${quantity}`}
-          onChange={handleOnInputChange}
-          onKeyDown={handleOnKeyDown}
-          onBlur={handleOnInputBlur}
-        />
-        <button className="quantity-button" id="add-button" aria-label="add">
-          <img src={PlusIcon} alt="plus" />
-        </button>
+      <div className="quantity-container">
+        <div className="quantity-wrapper" onClick={changeQuantity}>
+          <button
+            className="quantity-button"
+            id="subtract-button"
+            aria-label="subtract"
+          >
+            <img src={MinusIcon} alt="minus" />
+          </button>
+          <input
+            type="number"
+            inputMode="numeric"
+            name="quantity"
+            id="quantity-input"
+            aria-label="quantity"
+            ref={quantityInputRef}
+            value={`${quantity}`}
+            onChange={handleOnInputChange}
+            onKeyDown={handleOnKeyDown}
+            onBlur={handleOnInputBlur}
+          />
+          <button className="quantity-button" id="add-button" aria-label="add">
+            <img src={PlusIcon} alt="plus" />
+          </button>
+        </div>
+        <AddToCart cart={cart} addToCart={addToCart} />
       </div>
-      <AddToCart cart={cart} addToCart={addToCart} />
     </div>
   );
 };

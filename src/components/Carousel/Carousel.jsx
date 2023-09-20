@@ -8,6 +8,7 @@ import IconPrevious from "/src/assets/images/icon-previous.svg";
 import IconNext from "/src/assets/images/icon-next.svg";
 
 const Carousel = ({ currentImageId, setCurrentImageId }) => {
+  // Function that increments or decrements the arrow id
   const updateArrowImageId = (e) => {
     // First image and prev arrow clicked
     if (
@@ -57,7 +58,11 @@ const Carousel = ({ currentImageId, setCurrentImageId }) => {
         {PRODUCT_IMAGES.map((image) => {
           return (
             <div key={image.id} className="carousel-element">
-              <img id={`image-${image.id}`} src={image.imageUrl}></img>
+              <img
+                id={`image-${image.id}`}
+                src={image.imageUrl}
+                alt={image.alt}
+              ></img>
             </div>
           );
         })}
